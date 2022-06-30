@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Dropdown</title>
+</head>
+<body>
+    <!-- <div class="dropdown">
+        <input class="text-box"  type="text" placeholder="Select on" readonly>
+        <div class="options">
+           <div onclick="show('HTML')">
+                <div >
+                    <img width="20" height="20" src="./assets/Belly-logo.png" alt="HTML">
+                    <span>HTML</span>
+                </div>
+           </div>
+           <div onclick="show('CSS')">
+                <div>
+                    <img width="20" height="20" src="./assets/binance-coin-bnb-logo.png" alt="HTML">
+                    <span>CSS</span>
+                </div>
+           </div>
+           <div onclick="show('Java')">
+                <div>
+                    <img width="20" height="20" src="./assets/eth.png" alt="HTML">
+                    <span>Java</span>
+                </div>
+           </div>
+           <div onclick="show('React')">
+                <div>
+                    <img width="20" height="20" src="./assets/ethCurrency.png" alt="HTML">
+                    <span>React</span>
+                </div>
+           </div>
+        </div>
+    </div> -->
+    <!-- **************** -->
+    <div class="container">
+    <div class="dropdown">
+        <div class="dropdown__skeleton">
+            <div class="dropdown__selected dropdown__option"><span>select</span></div>
+            
+            <div class="dropdown__arrow"></div>
+        </div>
+        <div class="dropdown__options">
+            <div class="dropdown__option dropdown__option--selected">
+                    <img  src="./assets/Belly-logo.png" alt="HTML"/>
+                    <span>HTML</span>
+            </div>
+            
+         
+            <div class="dropdown__option">
+                    <img  src="./assets/binance-coin-bnb-logo.png" alt="CSS"/>
+                    <span>CSS</span>
+            </div>
+           
+          
+            <div class="dropdown__option">
+                    <img  src="./assets/eth.png" alt="Java"/>
+                    <span>Java</span>
+            </div>
+            <div class="dropdown__option">
+                    <img  src="./assets/ethCurrency.png" alt="React"/>
+                    <span>React</span>
+            </div>
+           </div>
+    </div>
+   <hr/> 
+   <div class="dropdown">
+    <div class="dropdown__skeleton">
+        <div class="dropdown__selected dropdown__option"><span>select</span></div>
+        
+        <div class="dropdown__arrow"></div>
+    </div>
+    <div class="dropdown__options">
+        <div class="dropdown__option dropdown__option--selected">
+                <img  src="./assets/Belly-logo.png" alt="HTML"/>
+                <span>HTML</span>
+        </div>
+        
+     
+        <div class="dropdown__option">
+                <img  src="./assets/binance-coin-bnb-logo.png" alt="CSS"/>
+                <span>CSS</span>
+        </div>
+       
+      
+        <div class="dropdown__option">
+                <img  src="./assets/eth.png" alt="Java"/>
+                <span>Java</span>
+        </div>
+        <div class="dropdown__option">
+                <img  src="./assets/ethCurrency.png" alt="React"/>
+                <span>React</span>
+        </div>
+       </div>
+</div>
+</div>
+
+
+    <!-- **************** -->
+    <!-- <div class="container">
+        <div class="dropdown">
+          <div class="dropdown__skeleton">
+            <div class="dropdown__selected dropdown__option"><span>select</span></div>
+            
+            <div class="dropdown__arrow"></div>
+          </div>
+          
+          <div class="dropdown__options">
+            <div class="dropdown__option dropdown__option--selected"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/flag-for-united-kingdom_1f1ec-1f1e7.png" alt="United Kingdom"/><span>United Kingdom</span></div>
+            
+            <div class="dropdown__option"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/flag-for-united-states_1f1fa-1f1f8.png" alt="U.S."/><span>U.S.</span></div>
+            
+            <div class="dropdown__option"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/flag-for-france_1f1eb-1f1f7.png" alt="France"/><span>France</span></div>
+            
+            <div class="dropdown__option"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/flag-for-spain_1f1ea-1f1f8.png" alt="Spain"/><span>Spain</span></div>
+            
+            <div class="dropdown__option"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/flag-for-germany_1f1e9-1f1ea.png" alt="Germany"/><span>Germany</span></div>
+          </div>
+        </div>
+      </div> -->
+    <!-- <script>
+        function show(value) {
+    document.querySelector(".text-box").value = value;
+  }
+  
+  let dropdown = document.querySelector(".dropdown")
+  dropdown.onclick = function() {
+      dropdown.classList.toggle("active")
+  }
+
+    </script> -->
+    <script>
+        console.clear();
+
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+  dropdown.addEventListener('click', (e) => {
+    dropdown.classList.toggle('dropdown__options--visible')
+  })
+  
+  dropdown.querySelectorAll('.dropdown__options .dropdown__option').forEach(opt => {
+    opt.addEventListener('click', (e) => {      
+      dropdown.querySelector('.dropdown__selected').innerHTML = opt.innerHTML;
+    })
+  })
+})
+    </script>
+
+</body>
+</html>
